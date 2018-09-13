@@ -181,5 +181,5 @@ endif
 
 " vim-gitgutter
 if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
-    let g:gitgutter_enabled = 1
+    autocmd BufWritePost * GitGutter
 endif
