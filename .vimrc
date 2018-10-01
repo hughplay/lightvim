@@ -98,6 +98,9 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
+" Vim indentation based on file type
+autocmd BufRead,BufNewFile   *.c,*.h,*.cpp,*.html set sw=2 ts=2 sts=2 et tw=80 wrap
+
 " ===========================
 " Vim-plug
 " ===========================
@@ -117,8 +120,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
+Plug 'junegunn/vim-easy-align'
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'  }
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
@@ -182,4 +186,10 @@ endif
 " vim-gitgutter
 if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
     autocmd BufWritePost * GitGutter
+endif
+
+" vim-easy-align
+if isdirectory(expand("~/.vim/bundle/vim-easy-align"))
+    xmap ga <Plug>(EasyAlign)
+    nmap ga <Plug>(EasyAlign)
 endif
