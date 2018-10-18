@@ -126,6 +126,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'  }
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -192,4 +193,9 @@ endif
 if isdirectory(expand("~/.vim/bundle/vim-easy-align"))
     xmap ga <Plug>(EasyAlign)
     nmap ga <Plug>(EasyAlign)
+endif
+
+" tagbar
+if isdirectory(expand("~/.vim/bundle/tagbar"))
+    nmap <F8> :TagbarToggle<CR>
 endif
