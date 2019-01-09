@@ -102,6 +102,15 @@ augroup END
 " Vim indentation based on file type
 autocmd BufRead,BufNewFile   *.c,*.h,*.cpp,*.html set sw=2 ts=2 sts=2 et tw=80 wrap
 
+" Change cursor shape
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
 " ===========================
 " Vim-plug
 " ===========================
@@ -122,6 +131,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'junegunn/vim-easy-align'
+Plug 'chaoren/vim-wordmotion'
 
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
 Plug 'scrooloose/nerdcommenter'
