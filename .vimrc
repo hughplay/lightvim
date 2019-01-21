@@ -100,7 +100,7 @@ augroup resCur
 augroup END
 
 " Vim indentation based on file type
-autocmd BufRead,BufNewFile   *.c,*.h,*.cpp,*.html set sw=2 ts=2 sts=2 et tw=80 wrap
+autocmd BufRead,BufNewFile   *.c,*.h,*.cpp,*.html,*.yaml set sw=2 ts=2 sts=2 et tw=80 nowrap
 
 " Change cursor shape
 if exists('$TMUX')
@@ -187,6 +187,9 @@ endif
 
 "coc.nvim
 if isdirectory(expand("~/.vim/bundle/coc.nvim"))
+    " Disable preview
+    set completeopt-=preview
+
     " if hidden not set, TextEdit might fail.
     set hidden
 
