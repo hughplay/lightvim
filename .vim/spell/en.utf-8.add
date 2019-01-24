@@ -43,3 +43,5 @@ InpaintLoss
 func
 imgs
 cls
+laplacian
+inpaint
