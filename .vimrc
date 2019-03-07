@@ -233,7 +233,7 @@ if isdirectory(expand("~/.vim/bundle/coc.nvim"))
       if &filetype == 'vim'
         execute 'h '.expand('<cword>')
       else
-        call CocActionAsync('doHover')
+        call CocAction('doHover')
       endif
     endfunction
 
@@ -251,9 +251,9 @@ if isdirectory(expand("~/.vim/bundle/coc.nvim"))
     augroup mygroup
       autocmd!
       " Setup formatexpr specified filetype(s).
-      autocmd FileType typescript,json setl formatexpr=CocActionAsync('formatSelected')
+      autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
       " Update signature help on jump placeholder
-      "autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+      autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
     augroup end
 
     " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
@@ -266,10 +266,10 @@ if isdirectory(expand("~/.vim/bundle/coc.nvim"))
     nmap <leader>qf  <Plug>(coc-fix-current)
 
     " Use `:Format` for format current buffer
-    command! -nargs=0 Format :call CocActionAsync('format')
+    command! -nargs=0 Format :call CocAction('format')
 
     " Use `:Fold` for fold current buffer
-    command! -nargs=? Fold :call CocActionAsync('fold', <f-args>)
+    command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 
     " Add diagnostic info for https://github.com/itchyny/lightline.vim
