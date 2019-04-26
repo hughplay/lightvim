@@ -128,6 +128,9 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'  }
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
 

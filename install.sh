@@ -42,6 +42,7 @@ ln -nfs ~/.vimrc ~/.config/nvim/init.vim
 
 vim \
     "+PlugInstall --sync" \
+    "+PlugUpdate --sync" \
     "+PlugClean" \
     "+qa"
 
