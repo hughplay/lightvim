@@ -118,7 +118,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'joshdick/onedark.vim'
-Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'junegunn/vim-easy-align'
@@ -169,9 +169,14 @@ if isdirectory(expand("~/.vim/bundle/onedark.vim")) || isdirectory(expand("~/.vi
 endif
 
 " vim-indent-guides
-if isdirectory(expand("~/.vim/bundle/indentLine"))
+if isdirectory(expand("~/.vim/bundle/vim-indent-guides"))
     " https://misc.flogisoft.com/bash/tip_colors_and_formatting
-    let g:indentLine_color_term = 8
+    let g:indent_guides_auto_colors = 0
+    hi IndentGuidesOdd  ctermbg=236
+    hi IndentGuidesEven ctermbg=235
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_guide_size=1
+    let g:indent_guides_start_level=2
 endif
 
 " rainbow
