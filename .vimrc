@@ -100,7 +100,7 @@ augroup resCur
 augroup END
 
 " Vim indentation based on file type
-autocmd BufRead,BufNewFile   *.c,*.h,*.cpp,*.html,*.yaml set sw=2 ts=2 sts=2 et tw=80 nowrap
+autocmd BufRead,BufNewFile   *.c,*.h,*.cpp,*.html,*.yaml,*.vue set sw=2 ts=2 sts=2 et tw=80 nowrap
 
 " ===========================
 " Vim-plug
