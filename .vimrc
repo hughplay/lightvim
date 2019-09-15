@@ -123,6 +123,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'junegunn/vim-easy-align'
 Plug 'chaoren/vim-wordmotion'
+Plug 'psf/black'
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer'  }
 Plug 'scrooloose/nerdcommenter'
@@ -207,4 +208,9 @@ endif
 " tagbar
 if isdirectory(expand("~/.vim/bundle/tagbar"))
     nmap <F8> :TagbarToggle<CR>
+endif
+
+" Black
+if isdirectory(expand("~/.vim/bundle/black"))
+    autocmd BufWritePre *.py execute ':Black'
 endif
